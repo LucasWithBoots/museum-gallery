@@ -15,7 +15,7 @@ export default function InfoArt({ id }: { id: number }) {
     const gallery = useGallery(id);
 
     return (
-        <Card className="h-auto w-1/2 mx-auto my-10">
+        <Card className="h-auto lg:w-1/2 mx-auto my-10">
             <CardHeader>
                 <CardTitle>{gallery?.title}</CardTitle>
                 <CardDescription>

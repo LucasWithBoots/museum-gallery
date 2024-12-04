@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <div className="p-5 max-w-5xl mx-auto mt-4">
             {galleries.length !== 0 ? (
-                <div className="grid grid-cols-4 gap-5">
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5 ">
                     {galleries.map((gallery) => (
                         <ArtDisplayed
                             key={gallery.id}
