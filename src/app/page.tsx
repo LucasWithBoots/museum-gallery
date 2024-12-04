@@ -4,7 +4,7 @@ import ArtDisplayed from "@/components/art_displayed";
 import { Button } from "@/components/ui/button";
 import { useGalleries } from "@/hooks/use-galleries";
 import { Plus } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Home() {
     const [page, setPage] = useState(1);
