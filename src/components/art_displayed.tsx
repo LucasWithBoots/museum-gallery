@@ -22,8 +22,8 @@ export default function ArtDisplayed({
     artist_title: string;
 }) {
     return (
-        <Link href={`./info/${id}`}>
-            <Card className="flex flex-col self-start">
+        <Card className="flex flex-col self-start">
+            <Link href={`./info/${id}`}>
                 <CardContent className="justify-items-center pt-6">
                     <img
                         src={image_id}
@@ -38,7 +38,7 @@ export default function ArtDisplayed({
                 <CardFooter>
                     <p>{artist_title}</p>
                 </CardFooter>
-            </Card>
-        </Link>
+            </Link>
+        </Card>
     );
 }

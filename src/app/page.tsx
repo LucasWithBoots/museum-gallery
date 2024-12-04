@@ -11,9 +11,9 @@ export default function Home() {
     const galleries = useGalleries(page);
 
     return (
-        <div className="">
+        <div className="p-5 max-w-5xl mx-auto">
             {galleries.length !== 0 ? (
-                <div className="grid grid-cols-5">
+                <div className="grid grid-cols-4 gap-5">
                     {galleries.map((gallery) => (
                         <ArtDisplayed
                             key={gallery.id}
@@ -29,7 +29,11 @@ export default function Home() {
                 <h1>LOADING</h1>
             )}
 
-            <Button className="bg-yellow-500" onClick={() => setPage(page + 1)}>
+            <Button
+                variant="outline"
+                className=" fixed bottom-4 left-1/2 transform -translate-x-1/2"
+                onClick={() => setPage(page + 1)}
+            >
                 <Plus /> Load more
             </Button>
         </div>
