@@ -17,8 +17,9 @@ export default function Home() {
                     {galleries.map((gallery) => (
                         <ArtDisplayed
                             key={gallery.id}
+                            id={gallery.id}
                             title={gallery.title}
-                            description={gallery.thumbnail.alt_text}
+                            description={gallery.thumbnail?.alt_text}
                             image_id={`https://www.artic.edu/iiif/2/${gallery.image_id}/full/843,/0/default.jpg`}
                             artist_title={gallery.artist_title}
                         />
