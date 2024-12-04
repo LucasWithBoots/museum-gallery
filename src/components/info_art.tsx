@@ -9,12 +9,13 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { useGallery } from "@/hooks/use-gallery";
+import Image from "next/image";
 
 export default function InfoArt({ id }: { id: number }) {
     const gallery = useGallery(id);
 
     return (
-        <Card>
+        <Card className="h-auto w-1/2 mx-auto my-10">
             <CardHeader>
                 <CardTitle>{gallery?.title}</CardTitle>
                 <CardDescription>
@@ -22,13 +23,20 @@ export default function InfoArt({ id }: { id: number }) {
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <img
+                <Image
                     src={`https://www.artic.edu/iiif/2/${gallery?.image_id}/full/843,/0/default.jpg`}
-                    className="w-40 rounded-md"
+                    className="rounded-md"
+                    width={500}
+                    height={100}
+                    alt={gallery?.title ?? "No title"}
                 />
             </CardContent>
             <CardFooter>
-                <p>Card Footer</p>
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: gallery?.description || "",
+                    }}
+                />
             </CardFooter>
         </Card>
     );

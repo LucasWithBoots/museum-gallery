@@ -1,17 +1,7 @@
 "use server";
 
 import { GALLERIES_GET } from "@/functions/api";
-
-export interface GalleryItem {
-    id: number;
-    title: string;
-    description: string;
-    thumbnail: {
-        alt_text: string;
-    };
-    artist_title: string;
-    image_id: string;
-}
+import { GalleryItem } from "@/interfaces/gallery-item";
 
 interface GalleryResponse {
     pagination: object;

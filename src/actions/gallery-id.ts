@@ -1,5 +1,5 @@
 import { GALLERY_GET } from "@/functions/api";
-import { GalleryItem } from "./gallery";
+import { GalleryItem } from "@/interfaces/gallery-item";
 
 interface GalleryResponse {
     data: GalleryItem;

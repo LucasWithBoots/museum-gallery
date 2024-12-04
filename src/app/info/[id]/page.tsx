@@ -10,8 +10,7 @@ export default async function Page({
     const slug = +(await params).id;
 
     return (
-        <div>
-            <div>My Post: {slug}</div>
+        <div className="h-screen px-20">
             <InfoArt id={slug} />
         </div>
     );
