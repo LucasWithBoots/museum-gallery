@@ -11,7 +11,7 @@ export default function Home() {
     const galleries = useGalleries(page);
 
     return (
-        <div className="p-5 max-w-5xl mx-auto">
+        <div className="p-5 max-w-5xl mx-auto mt-4">
             {galleries.length !== 0 ? (
                 <div className="grid grid-cols-4 gap-5">
                     {galleries.map((gallery) => (
@@ -31,7 +31,7 @@ export default function Home() {
 
             <Button
                 variant="outline"
-                className=" fixed bottom-4 left-1/2 transform -translate-x-1/2"
+                className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-20"
                 onClick={() => setPage(page + 1)}
             >
                 <Plus /> Load more
