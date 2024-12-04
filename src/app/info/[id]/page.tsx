@@ -1,7 +1,6 @@
 "use server";
 
 import InfoArt from "@/components/info_art";
-import { PageProps } from "../../../../.next/types/app/info/[id]/page";
 
 export default async function Page({
     params,
