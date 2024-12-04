@@ -3,7 +3,7 @@
 import ArtDisplayed from "@/components/art_displayed";
 import { Button } from "@/components/ui/button";
 import { useGalleries } from "@/hooks/use-galleries";
-import { Plus } from "lucide-react";
+import { Github, Plus } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -29,13 +29,20 @@ export default function Home() {
                 <h1>LOADING</h1>
             )}
 
-            <Button
-                variant="outline"
-                className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-20"
-                onClick={() => setPage(page + 1)}
-            >
-                <Plus /> Load more
-            </Button>
+            <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex gap-5">
+                <Button variant="outline" onClick={() => setPage(page + 1)}>
+                    <Plus /> Load more
+                </Button>
+                <a
+                    href="https://github.com/LucasWithBoots/museum-gallery"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Button variant="outline">
+                        <Github /> Github
+                    </Button>
+                </a>
+            </div>
         </div>
     );
 }
