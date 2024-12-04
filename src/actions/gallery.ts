@@ -2,10 +2,14 @@
 
 import { GALLERY_GET } from "@/functions/api";
 
-interface GalleryItem {
+export interface GalleryItem {
     id: number;
     title: string;
     description: string;
+    thumbnail: {
+        alt_text: string;
+    };
+    artist_title: string;
     image_id: string;
 }
 
@@ -14,8 +18,8 @@ interface GalleryResponse {
     data: GalleryItem[];
 }
 
-export async function galleryGet() {
-    const { url } = GALLERY_GET({ page: 1, limit: 10 });
+export async function galleryGet(page: number) {
+    const { url } = GALLERY_GET({ page: page, limit: 10 });
     const response = await fetch(url);
     const data: GalleryResponse = await response.json();
 
