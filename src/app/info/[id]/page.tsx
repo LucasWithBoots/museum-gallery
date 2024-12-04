@@ -1,9 +1,14 @@
 "use server";
 
 import InfoArt from "@/components/info_art";
+import { PageProps } from "../../../../.next/types/app/info/[id]/page";
 
-export default async function Page({ params }: { params: { id: number } }) {
-    const slug = params.id;
+export default async function Page({
+    params,
+}: {
+    params: Promise<{ id: string }>;
+}) {
+    const slug = +(await params).id;
 
     return (
         <div>
