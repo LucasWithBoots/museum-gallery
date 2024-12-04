@@ -1,4 +1,5 @@
-import { galleryGet, GalleryItem } from "@/actions/gallery";
+import { galleryGet } from "@/actions/gallery";
+import { GalleryItem } from "@/interfaces/gallery-item";
 import { useEffect, useState } from "react";
 
 export function useGalleries(page: number) {
