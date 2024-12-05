@@ -1,6 +1,6 @@
 "use server";
 
-import InfoArt from "@/components/info_art";
+import ArtFullscreen from "@/app/info/[id]/art-fullscreen";
 
 export default async function Page({
     params,
@@ -11,7 +11,7 @@ export default async function Page({
 
     return (
         <div className="h-screen lg:px-20 md:px-10 sm:px-5">
-            <InfoArt id={slug} />
+            <ArtFullscreen id={slug} />
         </div>
     );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import ArtDisplayed from "@/components/art_displayed";
+import SquareGallery from "@/components/square-gallery";
 import { Button } from "@/components/ui/button";
 import { useGalleries } from "@/hooks/use-galleries";
 import { Github, Plus } from "lucide-react";
@@ -15,7 +15,7 @@ export default function Home() {
             {galleries.length !== 0 ? (
                 <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5 ">
                     {galleries.map((gallery) => (
-                        <ArtDisplayed
+                        <SquareGallery
                             key={gallery.id}
                             id={gallery.id}
                             title={gallery.title}

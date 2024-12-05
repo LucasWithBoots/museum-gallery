@@ -11,7 +11,7 @@ import {
 import { useGallery } from "@/hooks/use-gallery";
 import Image from "next/image";
 
-export default function InfoArt({ id }: { id: number }) {
+export default function ArtFullscreen({ id }: { id: number }) {
     const gallery = useGallery(id);
 
     return (
