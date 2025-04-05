@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useGalleries } from "@/hooks/use-galleries";
 import { Github, Plus } from "lucide-react";
 import { useState } from "react";
+import Loading from "@/components/loading";
 
 export default function Home() {
     const [page, setPage] = useState(1);
@@ -26,7 +27,7 @@ export default function Home() {
                     ))}
                 </div>
             ) : (
-                <h1>LOADING</h1>
+                <Loading />
             )}
 
             <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex gap-5">
