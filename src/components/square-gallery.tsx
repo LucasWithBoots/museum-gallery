@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { useRef } from "react";
 
 export default function SquareGallery({
     id,
@@ -23,9 +24,23 @@ export default function SquareGallery({
     image_id: string;
     artist_title: string;
 }) {
+    const audioRef = useRef<HTMLAudioElement>(null);
+
+    const playSound = () => {
+        if (audioRef.current) {
+            audioRef.current.currentTime = 0;
+            audioRef.current.play();
+        }
+    };
+
     return (
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-            <Card className="h-80 overflow-hidden relative">
+            <audio ref={audioRef} src="assets/audio/sound.mp3" preload="auto" />
+            <Card
+                className="h-80 overflow-hidden relative"
+                onMouseEnter={playSound}
+                onClick={playSound}
+            >
                 <Link href={`./info/${id}`}>
                     <CardContent className="justify-items-center pt-6">
                         <Image
